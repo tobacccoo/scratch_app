@@ -23,6 +23,13 @@
   display: flex;
  
 }
+
+.res-card:hover {
+
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} 
+
 .res-card {
   border: 1px solid black;
   width: 100px;
