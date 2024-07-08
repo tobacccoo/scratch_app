@@ -1,9 +1,9 @@
-import { LOGO_URL } from "./CDNlinks";
+import { LOGO_URL } from "./Links";
 
 const Header= ()=>{
     return(
       <div className='header'>
-        <img className="res-logo" alt="res-logo" src={LOGO_URL}/>
+        <img src={LOGO_URL} alt="res-logo" className="res-logo"  />
         <div className='nav-items'>
           <ul>
             <li>Home</li>
