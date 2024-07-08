@@ -65,3 +65,15 @@
   list-style-type: none;
   font-size: 24px;
 }
+
+.shimmer {
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  background-color: #f0f0f0;
+}
+
+.shimmerUI{
+  display: flex;
+  flex-wrap: wrap;
+}
