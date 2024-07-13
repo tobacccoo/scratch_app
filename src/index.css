@@ -19,8 +19,8 @@
 }
 
 .res-logo {
-  height: 150px;
-  width: 100px;
+  
+  width: 150px;
 }
 
 .all-cards {
@@ -37,7 +37,7 @@
 
 .res-card {
   border: 1px solid black;
-  width: 100px;
+  width: 150px;
   padding: 5px;
   flex-wrap: wrap;
   margin: 5px;
@@ -51,7 +51,7 @@
 
 .res-img {
 
-  width: 100%;
+  
 }
 
 .nav-items ul {
@@ -80,4 +80,5 @@
 
 .filter {
   display: flex;
+  margin: 5px;
 }
