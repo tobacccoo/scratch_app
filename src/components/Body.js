@@ -6,7 +6,7 @@ import Shimmer from './Shimmer';
 const Body = () => {
 
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
- 
+  const [searchField, setsearchField] = useState('');
   useEffect(()=>{
     fetchData();
   },[]);
@@ -18,7 +18,11 @@ async function fetchData(){
   setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   
 }
+function handleSearch(){
 
+
+
+}
 if(listOfRestaurants.length===0){
   return <Shimmer/>;
 }
@@ -28,6 +32,12 @@ if(listOfRestaurants.length===0){
   return (
     <div className="body">
       <div className="filter">
+        <input value={searchField} onChange={(e)=>{
+          setsearchField(e.target.value)
+        }}/>
+        <button className='search' onClick={()=>{
+          
+        }}></button>
         <button
           className="filter-btn"
           onClick={() => {
