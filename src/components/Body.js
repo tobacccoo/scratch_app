@@ -18,16 +18,9 @@ async function fetchData(){
   setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   
 }
-function handleSearch(){
-
-
-
-}
 if(listOfRestaurants.length===0){
   return <Shimmer/>;
 }
-  
-
 
   return (
     <div className="body">
@@ -36,8 +29,11 @@ if(listOfRestaurants.length===0){
           setsearchField(e.target.value)
         }}/>
         <button className='search' onClick={()=>{
-          
-        }}></button>
+          const searchList = listOfRestaurants.filter(
+            (res)=> res.info.name.includes(searchField)
+          );
+          setListOfRestaurants(searchList);
+        }}>Search</button>
         <button
           className="filter-btn"
           onClick={() => {
@@ -47,7 +43,7 @@ if(listOfRestaurants.length===0){
             );
 
             setListOfRestaurants(filteredList);
-            console.log(filteredList);
+            
           }}
         >
           Top Rated Restaurants
