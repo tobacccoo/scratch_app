@@ -1,4 +1,5 @@
 import { LOGO_URL } from "./Links";
+import { Link } from "react-router-dom";
 
 const Header= ()=>{
     return(
@@ -6,9 +7,9 @@ const Header= ()=>{
         <img src={LOGO_URL} alt="res-logo" className="res-logo"  />
         <div className='nav-items'>
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact</li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/about'>About Us</Link></li>
+            <li><Link to='/contact'>Contacts</Link></li>
             <li>Cart</li>
           </ul>
         </div>
