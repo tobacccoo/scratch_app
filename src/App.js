@@ -1,4 +1,5 @@
 import './index.css';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
@@ -6,6 +7,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
+// import Fashion from './components/Fashion';
+
+const Fashion = lazy(()=> import("./components/Fashion"));
 
 export const App = ()=> {
   return (
@@ -33,6 +37,12 @@ export const appRoute = createBrowserRouter([
   {
     path: '/contact',
     element: <Contact/>,
+    
+  },
+  {
+    path: '/fashion',
+    element: <Suspense fallback={<h1>Loading......Your internet sucks...</h1>
+    }><Fashion/></Suspense>,
     
   },
   {
