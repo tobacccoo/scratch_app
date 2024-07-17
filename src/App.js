@@ -12,6 +12,8 @@ import RestaurantMenu from './components/RestaurantMenu';
 const Fashion = lazy(()=> import("./components/Fashion"));
 
 export const App = ()=> {
+  const d = Header();
+  console.log(d);
   return (
     <div className="App">
       <Header/>
