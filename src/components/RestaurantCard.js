@@ -1,5 +1,7 @@
 import { CDN_URL } from "../utils/Links"; 
 
+
+
 const RestaurantCard = (props) => {
     const { resData } = props;
 
@@ -32,3 +34,15 @@ const RestaurantCard = (props) => {
 };
 
 export default RestaurantCard;
+
+export const promotedTag= (RestaurantCard)=>{
+    return (props)=>{
+      return(
+      <div>
+        <label className=" absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+      )
+  
+    }
+  };

@@ -1,9 +1,12 @@
 import { useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {promotedTag}from "./RestaurantCard";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+
+
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchField, setsearchField] = useState("");
@@ -14,6 +17,8 @@ const Body = () => {
   }, []);
 
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardPromoted = promotedTag(RestaurantCard);
 
   async function fetchData() {
     const data = await fetch(
@@ -82,12 +87,15 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? <RestaurantCardPromoted  resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
           </Link>
         ))}
       </div>
     </div>
   );
+
+
+
 };
 
 export default Body;
