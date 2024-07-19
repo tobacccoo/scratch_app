@@ -7,8 +7,8 @@ const Header= ()=>{
   const onlineStatus = useOnlineStatus();
 
     return(
-      <div className='flex justify-between'>
-        <img src={LOGO_URL} alt="res-logo" className="res-logo"  />
+      <div className='flex justify-between bg-green-100'>
+        <img src={LOGO_URL} alt="res-logo" className="h-40 w-28"  />
         <div>
           <ul className='flex'>
             <li className='p-5 m-5'>Online Status : {onlineStatus?'🟢':'🔴'}</li>
