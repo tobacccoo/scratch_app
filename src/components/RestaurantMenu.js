@@ -15,14 +15,8 @@ const RestaurantMenu = () => {
       (e) => e.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     ) || [];
 
-  // Extracting category titles
-  const categoryNames = category.map(cat => cat?.card?.card?.title);
-
-  const itemCards = category.map(cat => cat?.card?.card?.itemCards);
-  const subCategoryNames=  itemCards.map(e => e?.card?.info?.name)
-
-  // console.log("SUBCategory Names:", subCategoryNames);
-  console.log("Category Data:", category);
+ console.log("categories"+ category)
+    
 
   return (
     <div className="text-center">
@@ -39,7 +33,7 @@ const RestaurantMenu = () => {
             <ResCategory 
               key={categories?.card?.card?.title || index} 
               categoryName={categories?.card?.card?.title} 
-              subCategoryNames={itemCards.map(e => e?.card?.info?.name)}
+              itemCards={categories?.card?.card?.itemCards}
             />
           ))
         ) : (
@@ -51,3 +45,4 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
+
