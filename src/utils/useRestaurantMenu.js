@@ -1,24 +1,20 @@
- import { useEffect, useState } from "react";
- import { MENU_URL } from "./Links"; 
- 
- 
- export const useRestaurantMenu = (resId)=> {
+import { useEffect, useState } from "react";
+import { MENU_URL } from "./Links";
 
-    const [resInfo, setresInfo]= useState(null);
+export const useRestaurantMenu = (resId) => {
+  const [resInfo, setresInfo] = useState(null);
 
-
-useEffect(()=>{
+  useEffect(() => {
     fetchMenu();
-},[]);
+  }, []);
 
-const fetchMenu = async ()=> {
-    const data = await fetch( MENU_URL +resId );
+  const fetchMenu = async () => {
+    const data = await fetch(MENU_URL + resId);
     const json = await data.json();
-   
-    setresInfo(json.data);
-    
-}
-    return resInfo;
-}
 
-export default useRestaurantMenu
+    setresInfo(json.data);
+  };
+  return resInfo;
+};
+
+export default useRestaurantMenu;

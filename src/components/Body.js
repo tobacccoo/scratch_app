@@ -1,11 +1,9 @@
 import { useState } from "react";
-import RestaurantCard, {promotedTag}from "./RestaurantCard";
+import RestaurantCard, { promotedTag } from "./RestaurantCard";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
-
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -47,7 +45,8 @@ const Body = () => {
   return (
     <div className="my-2">
       <div className="flex items-center">
-        <input className=" m-1 p-1 h-7 border border-solid border-black"
+        <input
+          className=" m-1 p-1 h-7 border border-solid border-black"
           value={searchField}
           onChange={(e) => {
             setsearchField(e.target.value);
@@ -80,22 +79,23 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link
-          style={{
-            textDecoration: 'none',
-            color: '#000',
-          }}
+            style={{
+              textDecoration: "none",
+              color: "#000",
+            }}
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            {restaurant.info.isOpen ? <RestaurantCardPromoted  resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
+            {restaurant.info.isOpen ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
     </div>
   );
-
-
-
 };
 
 export default Body;
