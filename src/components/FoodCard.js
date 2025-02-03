@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, incrementItem, decrementItem } from "../itemSlice";
+import { addItem, incrementItem, decrementItem } from "../utils/itemSlice";
 import { CDN_URL } from "../utils/Links";
 
 const FoodCard = ({ itemInfo }) => {

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { incrementItem, decrementItem, removeItem, clearCart } from "../itemSlice";
+import { incrementItem, decrementItem, removeItem, clearCart } from "../utils/itemSlice";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
